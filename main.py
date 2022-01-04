@@ -14,8 +14,8 @@ DOMAIN = ".com"
 # Enter info needed for Selenium to access Zoho
 un = input("Please enter your Zoho username: ")
 pw = getpass.getpass("Please enter your Zoho password: ")
-org_id = input("Please enter your Zoho org ID: ")
-backup_id = input("Please enter the Zoho backup ID: ")
+org_id = input("Please enter your Zoho Org ID: ")
+backup_id = input("Please enter the Zoho Backup ID: ")
 attachments = int(input("Please enter the number of attachments in the backup: "))
 
 # Start a new Selenium webdriver
