@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 # DOMAIN should match the url used when you visit https://accounts.zoho.com, accounts.zoho.eu, etc
-DOMAIN = ".com"
+DOMAIN = "com"
 
 # Enter info needed for Selenium to access Zoho
 un = input("Please enter your Zoho username: ")
@@ -33,7 +33,7 @@ password.send_keys(pw)
 button.click()
 
 # Once we are logged in, navigate to the URLs with the backup files
-WebDriverWait(driver, 20).until(EC.url_matches(f"https://accounts.zoho.{DOMAIN}/home#profile/personal"))
+WebDriverWait(driver, 60).until(EC.url_matches(f"https://accounts.zoho.{DOMAIN}/home#profile/personal"))
 driver.get(f"https://download-accl.zoho.{DOMAIN}/v2/crm/{org_id}/backup/{backup_id}/Data_001.zip")
 for i in range(1, attachments + 1):
     driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.COMMAND + 't')
